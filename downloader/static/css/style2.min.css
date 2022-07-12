@@ -1,0 +1,74 @@
+.button {
+    border-radius: 5px;
+    background-color: rgb(226, 156, 43);
+    height: 2.5rem;
+    font-weight: 500;
+    border: 0px;
+}
+
+.button:hover {
+    background-color: rgb(166, 106, 17);
+    color: white;
+    font-weight: 700;
+}
+
+a {
+    color: inherit;
+}
+
+.videos_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.download_btn{
+    border-radius: 5px;
+    background-color: rgb(226, 156, 43);
+    height: 2.5rem;
+    width: 16rem;
+    font-weight: 500;
+    border: 0px;
+}
+.download_btn:hover {
+    background-color: rgb(166, 106, 17);
+    color: white;
+    font-weight: 700;
+}
+.download_btns{
+    border-radius: 20px;
+    background-color: rgb(181, 121, 26);
+    height: 2.5rem;
+    margin-right: 0.6rem;
+    width: 8rem;
+    font-weight: 500;
+    border: 0px;
+}
+.download_btns:hover {
+    background-color: rgb(166, 106, 17);
+    color: white;
+    font-weight: 700;
+}
+
+.download-video{
+    width: 65rem;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+    .download-video{
+        width: 25rem; flex-direction: column;
+    }
+    .btn-group{
+        flex-wrap: wrap;
+    }
+  }

@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% load static %}
+{% block content %}
+<div class="container">
+  <div class="videos">
+    {% for video in results %}
+    <form action="download/" method="get">
+      <div class="card mt-3" style="width: 18rem; border-radius: 15px; overflow: hidden;">
+        <input hidden name="video_id" type="text" value="{{video.video_id}}">
+        <img src="{{video.thumbnail_url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{video.title}}</h6>
+          <div class="videos_list">
+            <span class="mr-1 d-flex"> <i class="far fa-clock m-1"></i>
+              <p class="card-text ml-1 vid_len"> {{video.length}}</p>
+            </span>
+
+            <span class="mx-3 d-flex"> <i class="far fa-eye m-1"></i>
+              <p class="card-text views">{{video.views}}</P>
+            </span>
+          </div>
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        {% comment %} {% for stream in video.streams %} {% endcomment %}
+        {% comment %} <a href="{{stream.url}}"> {% endcomment %}
+
+          <button type="submit" class="btn download_btn mt-2"> <i class="fa fa-download"></i>  Download</button>
+        {% comment %} </a> {% endcomment %}
+        
+        {% comment %} {% endfor %} {% endcomment %}
+          
+        </div>
+      </div>
+    </form>
+    {% endfor %}
+  </div>
+
+</div>
+<script defer>
+  let timing = document.getElementsByClassName("vid_len")
+  console.log(timing)
+  for (let i = 0; i < timing.length; i++) {
+    time_min = Number(timing[i].textContent) / 60
+    timing[i].textContent = String(time_min.toFixed(2)) + " Minutes"
+    console.log(timing[i])
+  }
+
+  let views_eliments = document.getElementsByClassName("views")
+  for (let i = 0; i < views_eliments.length; i++) {
+    var views_no = views_eliments[i].textContent
+    views_eliments[i].textContent = convertToInternationalCurrencySystem(views_no)
+    console.log(convertToInternationalCurrencySystem(views_no))
+  }
+
+
+  function convertToInternationalCurrencySystem(labelValue) {
+
+    // Nine Zeroes for Billions
+    return Math.abs(Number(labelValue)) >= 1.0e+9
+
+      ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+      // Six Zeroes for Millions 
+      : Math.abs(Number(labelValue)) >= 1.0e+6
+
+        ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+        // Three Zeroes for Thousands
+        : Math.abs(Number(labelValue)) >= 1.0e+3
+
+          ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+
+          : Math.abs(Number(labelValue));
+
+  }
+  // let views = document.getElementById("views")
+  // var views_no = views.textContent
+  // views.textContent = Math.floor(Number(views_no) / 60);
+
+</script>
+{% endblock %}
