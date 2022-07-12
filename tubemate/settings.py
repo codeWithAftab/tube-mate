@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^&w6-1#3qqiqtw39q+z(n%9kq$zvw0ac@pm%2nv)8751n$tebv
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["127.0.0.1","https://tube-mate.herokuapp.com/"]
+ALLOWED_HOSTS = ["127.0.0.1","tube-mate.herokuapp.com"]
 
 
 # Application definition
