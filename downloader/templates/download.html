@@ -15,7 +15,7 @@
         </div>
 
     </div> -->
-    <div  class="download-video card mt-5" >
+    <div class="download-video card mt-5">
         {% comment %} <form method="post">
             {% csrf_token %} {% endcomment %}
             <div class="row no-gutters">
@@ -23,45 +23,67 @@
                     {% comment %} <img class="card-img" src="{{thumbnail}}" alt=""> {% endcomment %}
                     <video width="350" height="250" controls>
                         <source src="{{video_url}}" type="video/mp4">
-                        {% comment %} <source src="movie.ogg" type="video/ogg">
+                        {% comment %}
+                        <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag. {% endcomment %}
-                      </video>
+                    </video>
                 </div>
-            <input hidden type="text" id="data" name="vid_data" value="{{video_id}}">
+                <input hidden type="text" id="data" name="vid_data" value="{{video_id}}">
                 <div class="col-sm-7">
                     <div class="card-body">
-                        <h5 class="card-title pt-5">{{vid_title}}</h5>
-                        <span class="mr-1 d-flex"> <i class="far fa-clock m-1"></i>
-                            <p class="card-text ml-1 vid_len"> {{length}}</p>
-                          </span>
-              
-                          <span class="mx-3 d-flex"> <i class="far fa-eye m-1"></i>
-                            <p class="card-text views">{{views}}</P>
-                          </span>
+                        <h5 class="card-title pt-2">{{vid_title}}</h5>
+                        <div class="videos_list">
+                            <span class="mr-1 d-flex"> <i class="far fa-clock m-1"></i>
+                              <p class="card-text ml-1 vid_len"> {{length}}</p>
+                            </span>
+                
+                            <span class="mx-3 d-flex"> <i class="far fa-eye m-1"></i>
+                              <p class="card-text views">{{views}}</P>
+                            </span>
+                          </div>
                         <!-- <p class="card-text">Suresh Dasari is a founder and technical lead developer in tutlane.</p> -->
-                        <div class="btn-group pt-5">
-                            {% for stream in streams %}
-                            <a href="{{stream.url}}" download>
+                        <div class="group my-2">
+                            <p class="card-text h6"> Download in Mp4.</p>
+                            <div class="btn-group">
+                                {% for stream in vid_streams %}
+                                <a href="{{stream.url}}" download>
 
-                            <button class="btn download_btns mt-4 col-sm-4" onclick="setVideoData(this)" value="{{stream.resolution}}"> <i class="fa fa-download"></i>{{stream.resolution}}</button>
-                        </a>
-                            {% endfor %}
+                                    <button class="btn download_btns mt-1 col-sm-4" onclick="setVideoData(this)"
+                                        value="{{stream.resolution}}"> <i
+                                            class="fa fa-download"></i>{{stream.resolution}}</button>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="group my-2">
+                            <p class="card-text h6"> Download in Mp3.</p>
+                            <div class="btn-group">
+                                {% for stream in audio_streams %}
+                                <a href="{{stream.url}}" download>
+
+                                    <button class="btn download_btns mt-1 col-sm-4" onclick="setVideoData(this)"
+                                        value="{{MP3}}"> <i class="fa fa-download"></i>{{stream.abr}}</button>
+                                </a>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        {% comment %} </form> {% endcomment %}
+            {% comment %}
+        </form> {% endcomment %}
     </div>
 
 </div>
 
 <script>
     let data = document.getElementById("data")
-    function setVideoData(elt){
-        var res =  elt.textContent.replace('\n',"")
+    function setVideoData(elt) {
+        var res = elt.textContent.replace('\n', "")
         var videoData = {
-            "video_id":data.value,
-            "res":elt.value
+            "video_id": data.value,
+            "res": elt.value
 
         }
         console.log(videoData)
@@ -69,38 +91,38 @@
     }
 
     let timing = document.getElementsByClassName("vid_len")
-  console.log(timing)
-  for (let i = 0; i < timing.length; i++) {
-    time_min = Number(timing[i].textContent) / 60
-    timing[i].textContent = String(time_min.toFixed(2)) + " Minutes"
-    console.log(timing[i])
-  }
+    console.log(timing)
+    for (let i = 0; i < timing.length; i++) {
+        time_min = Number(timing[i].textContent) / 60
+        timing[i].textContent = String(time_min.toFixed(2)) + " Minutes"
+        console.log(timing[i])
+    }
 
-  let views_eliments = document.getElementsByClassName("views")
-  for (let i = 0; i < views_eliments.length; i++) {
-    var views_no = views_eliments[i].textContent
-    views_eliments[i].textContent = convertToInternationalCurrencySystem(views_no)
-    console.log(convertToInternationalCurrencySystem(views_no))
-  }
+    let views_eliments = document.getElementsByClassName("views")
+    for (let i = 0; i < views_eliments.length; i++) {
+        var views_no = views_eliments[i].textContent
+        views_eliments[i].textContent = convertToInternationalCurrencySystem(views_no)
+        console.log(convertToInternationalCurrencySystem(views_no))
+    }
 
 
-  function convertToInternationalCurrencySystem(labelValue) {
+    function convertToInternationalCurrencySystem(labelValue) {
 
-    // Nine Zeroes for Billions
-    return Math.abs(Number(labelValue)) >= 1.0e+9
+        // Nine Zeroes for Billions
+        return Math.abs(Number(labelValue)) >= 1.0e+9
 
-      ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
-      // Six Zeroes for Millions 
-      : Math.abs(Number(labelValue)) >= 1.0e+6
+            ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+            // Six Zeroes for Millions 
+            : Math.abs(Number(labelValue)) >= 1.0e+6
 
-        ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
-        // Three Zeroes for Thousands
-        : Math.abs(Number(labelValue)) >= 1.0e+3
+                ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+                // Three Zeroes for Thousands
+                : Math.abs(Number(labelValue)) >= 1.0e+3
 
-          ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+                    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
 
-          : Math.abs(Number(labelValue));
+                    : Math.abs(Number(labelValue));
 
-  }
+    }
 </script>
 {% endblock %}

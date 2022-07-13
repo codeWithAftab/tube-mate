@@ -1,3 +1,4 @@
+from email.mime import audio
 from pkgutil import ImpImporter
 from django.shortcuts import render,redirect
 import pytube
@@ -36,9 +37,16 @@ def download(request):
         video_id = request.GET["video_id"]
         query = query+video_id
         yt = pytube.YouTube(query)
-        streams = yt.streams.filter(progressive=True)
-        for stream in streams:
-            print(stream)
+        audio = []
+        video_streams = yt.streams.filter(progressive=True)
+        audio_stream1 = yt.streams.get_by_itag("251")
+        audio_stream2 = yt.streams.get_by_itag("250")
+        audio.append(audio_stream1)
+        audio.append(audio_stream2)
+        
+        # for a_stream in audio_streams:
+        #     if int(a_stream.itag) <= 249:
+        #         audio_streams.remove(a_stream)  
 
         context = {
             "vid_title":yt.title,
@@ -46,8 +54,10 @@ def download(request):
             "length":yt.length,
             "views":yt.views,
             "chennel_url":yt.channel_url,
-            "streams":streams,
-            "video_url":streams[-1].url,
+            "vid_streams":video_streams,
+            "audio_streams":audio,
+
+            "video_url":video_streams[-1].url,
             "video_id": query
         }
 
