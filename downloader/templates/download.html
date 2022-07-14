@@ -1,20 +1,6 @@
 {% extends 'base.html' %} {% load static %}
 {% block content %}
-<div class="container dark">
-    <!-- <div class="card d-flex mt-4 download-video">
-        <div class="card-img">
-            <img src="{{thumbnail}}" class="card-img-top" alt="...">
-        </div>
-        <div class="container">
-            <div class="card-body">
-                <h5 class="card-title">{{vid_title}}</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-
-    <!-- 
-            </div>
-        </div>
-
-    </div> -->
+<div class="container">
     <div class="download-video card mt-5">
         {% comment %} <form method="post">
             {% csrf_token %} {% endcomment %}
@@ -46,8 +32,7 @@
                             <p class="card-text h6"> Download in Mp4.</p>
                             <div class="btn-group">
                                 {% for stream in vid_streams %}
-                                <a href="{{stream.url}}" download>
-
+                                <a href="{{stream.url}}">
                                     <button class="btn download_btns mt-1 col-sm-4" onclick="setVideoData(this)"
                                         value="{{stream.resolution}}"> <i
                                             class="fa fa-download"></i>{{stream.resolution}}</button>

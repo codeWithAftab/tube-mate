@@ -115,7 +115,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'downloader/static')
 
 
 # Static files (CSS, JavaScript, Images)
