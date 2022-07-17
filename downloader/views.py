@@ -1,6 +1,3 @@
-from email.mime import audio
-from msilib.schema import tables
-from pkgutil import ImpImporter
 from django.shortcuts import render,redirect
 import pytube
 from django.http import FileResponse
@@ -43,12 +40,6 @@ def download(request):
         audio_stream2 = yt.streams.get_by_itag("250")
         audio.append(audio_stream1)
         audio.append(audio_stream2)
-        
-        # for a_stream in audio_streams:
-        #     if int(a_stream.itag) <= 249:
-        #         audio_streams.remove(a_stream) 
-
-
         context = {
             "vid_title":yt.title,
             "thumbnail":yt.thumbnail_url,
