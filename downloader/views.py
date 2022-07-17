@@ -1,4 +1,5 @@
 from email.mime import audio
+from msilib.schema import tables
 from pkgutil import ImpImporter
 from django.shortcuts import render,redirect
 import pytube
@@ -15,9 +16,8 @@ def videos(request):
         query = request.GET["query"]
         history = History(search=query)
         history.save()
-        print(query)
         yt = pytube.Search(query)
-        print(yt.results)
+        print(yt.results)            
         result = yt.results
         context = {
             "results": result,
@@ -46,7 +46,8 @@ def download(request):
         
         # for a_stream in audio_streams:
         #     if int(a_stream.itag) <= 249:
-        #         audio_streams.remove(a_stream)  
+        #         audio_streams.remove(a_stream) 
+
 
         context = {
             "vid_title":yt.title,
@@ -58,7 +59,8 @@ def download(request):
             "audio_streams":audio,
 
             "video_url":video_streams[-1].url,
-            "video_id": query
+            "video_id": query,
+
         }
 
         return render(request,"download.html",context)

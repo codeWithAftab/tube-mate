@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-^&w6-1#3qqiqtw39q+z(n%9kq$zvw0ac@pm%2nv)8751n$tebv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ["127.0.0.1","tube-mate.herokuapp.com"]

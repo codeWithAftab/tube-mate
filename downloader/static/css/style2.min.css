@@ -68,18 +68,29 @@ a {
     display: flex;
     flex-wrap: wrap;
 }
+.group{
+    margin-top: 2rem;
+
+}
 
 @media only screen and (max-width: 600px) {
-    body {
-    background-color: grey;
-    }
-
     .download-video {
-        width: 25rem;
+        width: 100%;
         flex-direction: column;
     }
+    .mx{
+        margin-right: 0rem;
+    }
+    .group{
+        margin-top: 2rem;
 
+    }
     .btn-group {
         flex-wrap: wrap;
+    }
+
+    video{
+        width: 100%;
+        height: 100%;
     }
 }
