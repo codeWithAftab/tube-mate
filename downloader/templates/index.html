@@ -1,0 +1,478 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link REL="STYLESHEET" TYPE="text/css"
+        href="https://ignouhall.ignou.ac.in/HallTickets/Hall0622/include/ignou.css" />
+    {% block head %}{% include "head.html" %}{% endblock %}
+
+    <style>
+        table td {
+            padding: 5px;
+        }
+    </style>   
+    <title>
+        IGNOU 2022: HALL TICKET/ADMIT CARD
+    </title>
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+    <form name=frm method=post class="mt-3">
+        {% csrf_token %}
+        <div align=center>
+            <table width="90%" border=0>
+                <tr class=td3 style='text-align:center'>
+                    <td width=30% valign=top>
+                        <img src="https://ignouhall.ignou.ac.in/HallTickets/Hall0622/logo.jpg" height=70>
+                    </td>
+                    <td valign=top>
+                        <div align=center> <b>
+                                <font size=+1>
+                                    इंदिरा गांधी राष्ट्रीय मुक्त विश्वविद्यालय</font><br />
+                                Indira Gandhi National Open University<br />
+                                (केंद्रीय विश्वविद्यालय / A Central University)<br />
+                                </font>
+                    <td width=30% valign=top>
+                        <font class=cfont>
+                            <b>हाल टिकट/ प्रवेश पत्र-Hall Ticket/Admit Card<br />
+                                जून-2022, सत्रांत परीक्षा / JUNE-2022, Term End Examination
+                            </b>
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            <br />
+         
+            <div class="container">
+                
+               
+
+                <div class="card mt-3" style="width: 32rem; box-shadow: 5rem; border-radius: 2rem;">
+                    <font class="c2"><b><i>निम्नलिखित दर्ज करें/ Enter the following</i></b></font>
+                
+                    <!--<p><font class=c2font><b><i>Enter following fields</i></b></font>-->
+                    <center>
+                        <FORM METHOD=POST name=frm>
+                            <br>
+                            <table width=52% cellpadding=5 cellspacing=0>
+    
+                                <tr class=td2>
+                                    <Td width=40%> <b> Name:<br></b></td>
+                                    <td width=60%><input type=text id=txtEnrNo name=name></td>
+                                </tr>
+    
+                                <tr class=td2>
+                                    <Td width=40%> <b> अनुक्रमांक संख्या/Enrollment No.:<br></b></td>
+                                    <td width=60%><input type=text id=txtEnrNo name=txtEnrNo size=10 maxlength=10></td>
+                                </tr>
+    
+    
+                                <tr class="td2">
+                                    <Td> <b>प्रोग्राम/Program:</b></td>
+                                    <td width=10%><select id=ddlProgram name=ddlProgram>
+                                            <option value=''>--Select--</option>
+                                            <option value='ACISE'>ACISE</option>
+                                            <option value='ACPDM'>ACPDM</option>
+                                            <option value='ASSO'>ASSO</option>
+                                            <option value='BA'>BA</option>
+                                            <option value='BAECH'>BAECH</option>
+                                            <option value='BAEGH'>BAEGH</option>
+                                            <option value='BAG'>BAG</option>
+                                            <option value='BAHDH'>BAHDH</option>
+                                            <option value='BAHIH'>BAHIH</option>
+                                            <option value='BAPAH'>BAPAH</option>
+                                            <option value='BAPCH'>BAPCH</option>
+                                            <option value='BAPFHMH'>BAPFHMH</option>
+                                            <option value='BAPSH'>BAPSH</option>
+                                            <option value='BASKH'>BASKH</option>
+                                            <option value='BASOH'>BASOH</option>
+                                            <option value='BAVTM'>BAVTM</option>
+                                            <option value='BBARL'>BBARL</option>
+                                            <option value='BBASM'>BBASM</option>
+                                            <option value='BCA'>BCA</option>
+                                            <option value='BCOM'>BCOM</option>
+                                            <option value='BCOMAF'>BCOMAF</option>
+                                            <option value='BCOMCAA'>BCOMCAA</option>
+                                            <option value='BCOMFCA'>BCOMFCA</option>
+                                            <option value='BCOMG'>BCOMG</option>
+                                            <option value='BED'>BED</option>
+                                            <option value='BHM'>BHM</option>
+                                            <option value='BLIS'>BLIS</option>
+                                            <option value='BSC'>BSC</option>
+                                            <option value='BSCANH'>BSCANH</option>
+                                            <option value='BSCBCH'>BSCBCH</option>
+                                            <option value='BSCG'>BSCG</option>
+                                            <option value='BSCN'>BSCN</option>
+                                            <option value='BSW'>BSW</option>
+                                            <option value='BSWG'>BSWG</option>
+                                            <option value='BTS'>BTS</option>
+                                            <option value='CAFE'>CAFE</option>
+                                            <option value='CAHC'>CAHC</option>
+                                            <option value='CAHT'>CAHT</option>
+                                            <option value='CAL'>CAL</option>
+                                            <option value='CBS'>CBS</option>
+                                            <option value='CCH'>CCH</option>
+                                            <option value='CCITSK'>CCITSK</option>
+                                            <option value='CCLBL'>CCLBL</option>
+                                            <option value='CCP'>CCP</option>
+                                            <option value='CCPD'>CCPD</option>
+                                            <option value='CCR'>CCR</option>
+                                            <option value='CDM'>CDM</option>
+                                            <option value='CES'>CES</option>
+                                            <option value='CETM'>CETM</option>
+                                            <option value='CFAID'>CFAID</option>
+                                            <option value='CFDE'>CFDE</option>
+                                            <option value='CFE'>CFE</option>
+                                            <option value='CFL'>CFL</option>
+                                            <option value='CFN'>CFN</option>
+                                            <option value='CFO'>CFO</option>
+                                            <option value='CGAS'>CGAS</option>
+                                            <option value='CGCA'>CGCA</option>
+                                            <option value='CGDA'>CGDA</option>
+                                            <option value='CGL'>CGL</option>
+                                            <option value='CHBHC'>CHBHC</option>
+                                            <option value='CHCWM'>CHCWM</option>
+                                            <option value='CHHA'>CHHA</option>
+                                            <option value='CHR'>CHR</option>
+                                            <option value='CIB'>CIB</option>
+                                            <option value='CIG'>CIG</option>
+                                            <option value='CIHL'>CIHL</option>
+                                            <option value='CIS'>CIS</option>
+                                            <option value='CIT'>CIT</option>
+                                            <option value='CJL'>CJL</option>
+                                            <option value='CKLC'>CKLC</option>
+                                            <option value='CLIS'>CLIS</option>
+                                            <option value='CLTA'>CLTA</option>
+                                            <option value='CMAD'>CMAD</option>
+                                            <option value='CMCHN'>CMCHN</option>
+                                            <option value='CNCC'>CNCC</option>
+                                            <option value='CNIN'>CNIN</option>
+                                            <option value='CNM'>CNM</option>
+                                            <option value='COF'>COF</option>
+                                            <option value='CPABN'>CPABN</option>
+                                            <option value='CPAHM'>CPAHM</option>
+                                            <option value='CPAKM'>CPAKM</option>
+                                            <option value='CPATHA'>CPATHA</option>
+                                            <option value='CPEL'>CPEL</option>
+                                            <option value='CPF'>CPF</option>
+                                            <option value='CPHA'>CPHA</option>
+                                            <option value='CPLT'>CPLT</option>
+                                            <option value='CPSCM'>CPSCM</option>
+                                            <option value='CPVE'>CPVE</option>
+                                            <option value='CPY'>CPY</option>
+                                            <option value='CRCS'>CRCS</option>
+                                            <option value='CRD'>CRD</option>
+                                            <option value='CRUL'>CRUL</option>
+                                            <option value='CSLC'>CSLC</option>
+                                            <option value='CSWATT'>CSWATT</option>
+                                            <option value='CSWCJS'>CSWCJS</option>
+                                            <option value='CSWM'>CSWM</option>
+                                            <option value='CTE'>CTE</option>
+                                            <option value='CTPM'>CTPM</option>
+                                            <option value='CTRBS'>CTRBS</option>
+                                            <option value='CTS'>CTS</option>
+                                            <option value='CUL'>CUL</option>
+                                            <option value='CVAA'>CVAA</option>
+                                            <option value='CVAP'>CVAP</option>
+                                            <option value='CWHM'>CWHM</option>
+                                            <option value='DAFE'>DAFE</option>
+                                            <option value='DAQ'>DAQ</option>
+                                            <option value='DBPOFA'>DBPOFA</option>
+                                            <option value='DCCN'>DCCN</option>
+                                            <option value='DCE'>DCE</option>
+                                            <option value='DDT'>DDT</option>
+                                            <option value='DECE'>DECE</option>
+                                            <option value='DELED'>DELED</option>
+                                            <option value='DEVMT'>DEVMT</option>
+                                            <option value='DFPT'>DFPT</option>
+                                            <option value='DHORT'>DHORT</option>
+                                            <option value='DIPP'>DIPP</option>
+                                            <option value='DIR'>DIR</option>
+                                            <option value='DMOP'>DMOP</option>
+                                            <option value='DMT'>DMT</option>
+                                            <option value='DNA'>DNA</option>
+                                            <option value='DNHE'>DNHE</option>
+                                            <option value='DPLAD'>DPLAD</option>
+                                            <option value='DPVCPO'>DPVCPO</option>
+                                            <option value='DPVE'>DPVE</option>
+                                            <option value='DSCDM'>DSCDM</option>
+                                            <option value='DTG'>DTG</option>
+                                            <option value='DTH'>DTH</option>
+                                            <option value='DTS'>DTS</option>
+                                            <option value='DUL'>DUL</option>
+                                            <option value='DVAPFV'>DVAPFV</option>
+                                            <option value='DWED'>DWED</option>
+                                            <option value='DWM'>DWM</option>
+                                            <option value='MAAE'>MAAE</option>
+                                            <option value='MAAN'>MAAN</option>
+                                            <option value='MADE'>MADE</option>
+                                            <option value='MADP'>MADP</option>
+                                            <option value='MADVS'>MADVS</option>
+                                            <option value='MAEDS'>MAEDS</option>
+                                            <option value='MAEDU'>MAEDU</option>
+                                            <option value='MAER'>MAER</option>
+                                            <option value='MAFCS'>MAFCS</option>
+                                            <option value='MAGD'>MAGD</option>
+                                            <option value='MAH'>MAH</option>
+                                            <option value='MAJMC'>MAJMC</option>
+                                            <option value='MAJY'>MAJY</option>
+                                            <option value='MAPC'>MAPC</option>
+                                            <option value='MAPY'>MAPY</option>
+                                            <option value='MARD'>MARD</option>
+                                            <option value='MATS'>MATS</option>
+                                            <option value='MAUD'>MAUD</option>
+                                            <option value='MAWGS'>MAWGS</option>
+                                            <option value='MBA'>MBA</option>
+                                            <option value='MBAIHM'>MBAIHM</option>
+                                            <option value='MBF'>MBF</option>
+                                            <option value='MCA'>MCA</option>
+                                            <option value='MCA_NEW'>MCA_NEW</option>
+                                            <option value='MCOM'>MCOM</option>
+                                            <option value='MCOMBPCG'>MCOMBPCG</option>
+                                            <option value='MCOMFT'>MCOMFT</option>
+                                            <option value='MCOMMAFS'>MCOMMAFS</option>
+                                            <option value='MEC'>MEC</option>
+                                            <option value='MEG'>MEG</option>
+                                            <option value='MGPS'>MGPS</option>
+                                            <option value='MHA'>MHA</option>
+                                            <option value='MHD'>MHD</option>
+                                            <option value='MLIS'>MLIS</option>
+                                            <option value='MP'>MP</option>
+                                            <option value='MPA'>MPA</option>
+                                            <option value='MPB'>MPB</option>
+                                            <option value='MPHILCOM'>MPHILCOM</option>
+                                            <option value='MPHILGEOG'>MPHILGEOG</option>
+                                            <option value='MPHILSOC'>MPHILSOC</option>
+                                            <option value='MPHILSW'>MPHILSW</option>
+                                            <option value='MPS'>MPS</option>
+                                            <option value='MSCCFT'>MSCCFT</option>
+                                            <option value='MSCDFSM'>MSCDFSM</option>
+                                            <option value='MSCENV'>MSCENV</option>
+                                            <option value='MSCIS'>MSCIS</option>
+                                            <option value='MSCMACS'>MSCMACS</option>
+                                            <option value='MSCRWEE'>MSCRWEE</option>
+                                            <option value='MSK'>MSK</option>
+                                            <option value='MSO'>MSO</option>
+                                            <option value='MSW'>MSW</option>
+                                            <option value='MSWC'>MSWC</option>
+                                            <option value='MTM'>MTM</option>
+                                            <option value='MTTM'>MTTM</option>
+                                            <option value='PGCACP'>PGCACP</option>
+                                            <option value='PGCAE'>PGCAE</option>
+                                            <option value='PGCAP'>PGCAP</option>
+                                            <option value='PGCAR'>PGCAR</option>
+                                            <option value='PGCBHT'>PGCBHT</option>
+                                            <option value='PGCCC'>PGCCC</option>
+                                            <option value='PGCCL'>PGCCL</option>
+                                            <option value='PGCEDS'>PGCEDS</option>
+                                            <option value='PGCGI'>PGCGI</option>
+                                            <option value='PGCGPS'>PGCGPS</option>
+                                            <option value='PGCIATIVI'>PGCIATIVI</option>
+                                            <option value='PGCINDS'>PGCINDS</option>
+                                            <option value='PGCIPWS'>PGCIPWS</option>
+                                            <option value='PGCMDM'>PGCMDM</option>
+                                            <option value='PGCMHT'>PGCMHT</option>
+                                            <option value='PGCPP'>PGCPP</option>
+                                            <option value='PGDAC'>PGDAC</option>
+                                            <option value='PGDAE'>PGDAE</option>
+                                            <option value='PGDAPP'>PGDAPP</option>
+                                            <option value='PGDAST'>PGDAST</option>
+                                            <option value='PGDAW'>PGDAW</option>
+                                            <option value='PGDBP'>PGDBP</option>
+                                            <option value='PGDCA'>PGDCA</option>
+                                            <option value='PGDCA_NEW'>PGDCA_NEW</option>
+                                            <option value='PGDCFT'>PGDCFT</option>
+                                            <option value='PGDCJ'>PGDCJ</option>
+                                            <option value='PGDCOUN'>PGDCOUN</option>
+                                            <option value='PGDCSR'>PGDCSR</option>
+                                            <option value='PGDDC'>PGDDC</option>
+                                            <option value='PGDDM'>PGDDM</option>
+                                            <option value='PGDDVS'>PGDDVS</option>
+                                            <option value='PGDEDS'>PGDEDS</option>
+                                            <option value='PGDEMA'>PGDEMA</option>
+                                            <option value='PGDEOH'>PGDEOH</option>
+                                            <option value='PGDESD'>PGDESD</option>
+                                            <option value='PGDET'>PGDET</option>
+                                            <option value='PGDFCS'>PGDFCS</option>
+                                            <option value='PGDFM'>PGDFM</option>
+                                            <option value='PGDFMP'>PGDFMP</option>
+                                            <option value='PGDFSQM'>PGDFSQM</option>
+                                            <option value='PGDGM'>PGDGM</option>
+                                            <option value='PGDGPS'>PGDGPS</option>
+                                            <option value='PGDHE'>PGDHE</option>
+                                            <option value='PGDHHM'>PGDHHM</option>
+                                            <option value='PGDHIVM'>PGDHIVM</option>
+                                            <option value='PGDHO'>PGDHO</option>
+                                            <option value='PGDHRM'>PGDHRM</option>
+                                            <option value='PGDIBO'>PGDIBO</option>
+                                            <option value='PGDIDM'>PGDIDM</option>
+                                            <option value='PGDIPR'>PGDIPR</option>
+                                            <option value='PGDIS'>PGDIS</option>
+                                            <option value='PGDLAN'>PGDLAN</option>
+                                            <option value='PGDMCH'>PGDMCH</option>
+                                            <option value='PGDMH'>PGDMH</option>
+                                            <option value='PGDMM'>PGDMM</option>
+                                            <option value='PGDOM'>PGDOM</option>
+                                            <option value='PGDPM'>PGDPM</option>
+                                            <option value='PGDPPED'>PGDPPED</option>
+                                            <option value='PGDPSM'>PGDPSM</option>
+                                            <option value='PGDRD'>PGDRD</option>
+                                            <option value='PGDSLM'>PGDSLM</option>
+                                            <option value='PGDSS'>PGDSS</option>
+                                            <option value='PGDSWT'>PGDSWT</option>
+                                            <option value='PGDT'>PGDT</option>
+                                            <option value='PGDUPDL'>PGDUPDL</option>
+                                            <option value='PGDWGS'>PGDWGS</option>
+                                            <option value='PGJMC'>PGJMC</option>
+                                            <option value='PHDAN'>PHDAN</option>
+                                            <option value='PHDBC'>PHDBC</option>
+                                            <option value='PHDCHEM'>PHDCHEM</option>
+                                            <option value='PHDCOM'>PHDCOM</option>
+                                            <option value='PHDCS'>PHDCS</option>
+                                            <option value='PHDDR'>PHDDR</option>
+                                            <option value='PHDDV'>PHDDV</option>
+                                            <option value='PHDEC'>PHDEC</option>
+                                            <option value='PHDENG'>PHDENG</option>
+                                            <option value='PHDES'>PHDES</option>
+                                            <option value='PHDFL'>PHDFL</option>
+                                            <option value='PHDFN'>PHDFN</option>
+                                            <option value='PHDGDS'>PHDGDS</option>
+                                            <option value='PHDGEOG'>PHDGEOG</option>
+                                            <option value='PHDGY'>PHDGY</option>
+                                            <option value='PHDHC'>PHDHC</option>
+                                            <option value='PHDITS'>PHDITS</option>
+                                            <option value='PHDJMC'>PHDJMC</option>
+                                            <option value='PHDLE'>PHDLE</option>
+                                            <option value='PHDLIS'>PHDLIS</option>
+                                            <option value='PHDMGMT'>PHDMGMT</option>
+                                            <option value='PHDNS'>PHDNS</option>
+                                            <option value='PHDPA'>PHDPA</option>
+                                            <option value='PHDPC'>PHDPC</option>
+                                            <option value='PHDPS'>PHDPS</option>
+                                            <option value='PHDPVA'>PHDPVA</option>
+                                            <option value='PHDSOC'>PHDSOC</option>
+                                            <option value='PHDSTAT'>PHDSTAT</option>
+                                            <option value='PHDSW'>PHDSW</option>
+                                            <option value='PHDTT'>PHDTT</option>
+                                            <option value='SSB'>SSB</option>
+                                        </select></td>
+                                </tr>
+    
+                                <Tr>
+                                    <Td colspan=2>
+    
+                                        <div align=center> <input type=submit name=submit id=submit value=Submit
+                                                onclick="return validate();" class='btn btn-primary px-5'>
+                                        </div>
+                                    </td>
+                                    <input type=hidden name=submit1 value=1>
+                            </table>
+                            <!--<p>&nbsp;</p>
+                      <a href=ListShortlistedWrittenTest.htm>Click here to View List of Candidates who are provisionally shortlisted for the Written Test to be held on 30.04.2019</a>
+                      -->
+                      
+                    </FORM>
+                    
+                </center>
+                <div class="suchna mt-2">
+                    <ul class=" text-left" style="list-style-type: none";>
+                        <li class=" text-danger h7 font-weight-bold">परीक्षा सम्बंधित महत्त्वपूर्ण सूचनाएं। </li>
+                        <li class="h6">ज्यादा मेहनत से पढ़ाई न करें। इतना पढ़ कर क्या करोगे?</li>
+                        <li class="h6">परीक्षा ज्यादा से ज्यादा आगे वाले में से देखने का प्रयास करें।</li>
+                        <li class="h6">अगर आगे वाला आपको पेपर न दिखाए तोह उसे बाहर मारने की धमकी दें।</li>
+                        <li class="h6">एग्जाम हॉल में गालियों का ज्यादा से ज्यादा प्रयोग करें।</li>
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+
+
+</body>
+<script language=javascript>
+    function ValidateDeclaration() {
+        if (document.getElementById("CheckDeclaration").checked == false) {
+            alert('Pleae select declaration before proceeding further...')
+            document.getElementById("CheckDeclaration").focus();
+            return false;
+        }
+        if (document.getElementById("CheckDeclaration").checked == true) {
+            //alert('true');
+            $('#myModal').modal('hide');
+            //document.forms[0].submit();
+            return true;
+
+        }
+        else {
+            $('#myModal').modal('hide');
+            return false;
+        }
+        return true;
+    }
+
+
+    function forAgree() {
+        if (document.getElementById("Agree").checked == false) {
+            document.getElementById("submit").disabled = true;
+        }
+        else {
+            document.getElementById("submit").disabled = false;
+        }
+    }
+    function Close() {
+        var win = window.open("about:blank", "_self");
+        //var win=window.open('','_parent','');
+        win.close();
+    }
+
+</script>
+<script language=javascript>
+    function ValidateDeclaration() {
+        if (document.getElementById("CheckDeclaration").checked == false) {
+            alert('Pleae select declaration before proceeding further...')
+            document.getElementById("CheckDeclaration").focus();
+            return false;
+        }
+        if (document.getElementById("CheckDeclaration").checked == true) {
+            //alert('true');
+            $('#myModal').modal('hide');
+            //document.forms[0].submit();
+            return true;
+
+        }
+        else {
+            $('#myModal').modal('hide');
+            return false;
+        }
+        return true;
+    }
+
+
+
+
+    function validate() {
+        var varCount = 0;
+        if (document.getElementById("txtEnrNo").value != '') varCount++
+        if (document.getElementById("ddlProgram").value != '') varCount++
+        if (varCount != 2) {
+            alert("Please enter Enrolment No. & Program...")
+            document.getElementById("txtEnrNo").focus();
+            return false;
+        }
+
+        return true;
+
+    }
+</script>
+
+</html>

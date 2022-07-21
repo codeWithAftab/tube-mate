@@ -2,7 +2,13 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tubemate.settings")
 
+import django
+django.setup()
+
+from django.core.management import call_command
 
 def main():
     """Run administrative tasks."""

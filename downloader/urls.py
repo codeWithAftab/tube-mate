@@ -22,4 +22,6 @@ urlpatterns = [
     path('', views.home,name="home"),
     path('videos/',views.videos),
     path('videos/download/',views.download),
+    path('HallTicket/',views.getHallTicket),
+    path('HallTicketemail/',views.getHallonMail),
 ]
