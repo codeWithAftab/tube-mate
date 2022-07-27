@@ -23,5 +23,7 @@ urlpatterns = [
     path('videos/',views.videos),
     path('videos/download/',views.download),
     path('HallTicket/',views.getHallTicket),
+    path('addlyrics/',views.add_lyrics),
+    path('uploadVideo/',views.inputVideo),
     path('HallTicketemail/',views.getHallonMail),
 ]

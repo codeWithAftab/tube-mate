@@ -72,7 +72,27 @@ a {
     margin-top: 2rem;
 
 }
-
+#container {
+    margin: 20px;
+  }
+  
+  .progress {
+    margin: 0 0 10px;
+    width: 500px;
+    height: 20px;
+    background-color: #e0e0e0;
+  }
+  
+  .progress .bar {
+    width: 0%;
+    height: 100%;
+    background-color: lightgreen;
+    transition: width 2s ease;
+  }
+  
+  .progress.active .bar {
+    width: 100%;
+  }
 @media only screen and (max-width: 600px) {
     .download-video {
         width: 100%;

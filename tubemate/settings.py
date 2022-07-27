@@ -17,6 +17,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -120,8 +121,10 @@ STATIC_ROOT = os.path.join(BASE_DIR,'downloader/static')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+MEDIA_ROOT = os.path.join(BASE_DIR, 'downloader/media')
 
-STATIC_URL = '/static/'
+MEDIA_URL = "/media/"
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

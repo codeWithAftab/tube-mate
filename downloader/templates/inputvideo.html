@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+<div id="container" class="container pp">
+
+    <form action="/addlyrics/" method="post" onsubmit="return clickme()" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mt-5">
+            <div class="mb-3 col-md-4">
+                <label for="video" class="form-label">Choose Your Video File.</label>
+                <input class="form-control" type="file" id="video" name="video_file">
+            </div>
+            <div class="mb-3 col-md-4">
+                <label for="lyrics" class="form-label">Choose Lyrics File</label>
+                <input class="form-control" type="file" name="lyrics_file" id="lyrics" multiple>
+            </div>
+            <div class="col-md-12">
+
+                <button id="submitbtn" class="btn btn-success btn-lg"   id="button">Submit</button>
+            </div>
+
+    </form>
+</div>
+<script>
+    function clickme(){
+        document.getElementById("submitbtn").disabled = true;
+        // document.getElementById("video").disabled = true;
+        // document.getElementById("lyrics").disabled = true;
+        setTimeout(() => {
+            
+            alert("Please Wait Some Minutes Video In progress...")
+        }, 1000);
+        $('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+        return true
+    }
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %}
+{% block content %}
+
+<div class="container text-center">
+<div class="video_stream mt-5">
+    <video poster="{{url}}" width="320" height="240" controls>
+        <source src="{{url}}" type="video/mp4">
+        <source src="{{url}}" type="video/ogg">
+      </video>
+</div>
+<a href="{{url}}" class="btn btn-success  mt-4">DOWNLOAD Video</a>
+</div>
+
+{% endblock content %}

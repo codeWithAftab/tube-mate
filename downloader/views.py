@@ -1,11 +1,15 @@
-from email import message
 import imp
-from operator import index
+from importlib.resources import path
+
+from requests import delete
+from downloader.lyrics import *
 from django.shortcuts import render,redirect
 import pytube
 from django.http import FileResponse, HttpRequest, HttpResponse
 import pandas as pd
 import os
+from tubemate import settings
+from django.core.files.storage import FileSystemStorage
 from django.contrib.staticfiles.storage import staticfiles_storage
 from tubemate import settings
 from downloader.models import History
@@ -65,7 +69,7 @@ def download(request):
 
         return render(request,"download.html",context)
     
-    # return FileResponse(open(YouTube(url).streams.first().download(skip_existing=True),'rb'))
+
 
 def getHallTicket(request):
     if request.method == "POST":
@@ -100,6 +104,7 @@ def getHallTicket(request):
         
         except Exception as e:
             print(e)
+
         return HttpResponse(hallticket)
 
     return render(request,"index.html")
@@ -130,3 +135,45 @@ def getHallonMail(request):
         message = meam
         return HttpResponse(f"<h1>{message}</h1>")
     return render(request,"getHallonmail.html")
+
+def add_lyrics(request):
+    module_dir = os.path.dirname(__file__)  # get current directory
+    if request.method == "POST":
+        path = "downloader/media/output/"
+        deletefiles(path)
+        fss = FileSystemStorage()
+        print(request.FILES)
+        video = request.FILES.get("video_file")
+        lrc = request.FILES.get("lyrics_file")
+        video_file = fss.save(f"videos/{video.name}", video)
+        lyric_file = fss.save(f"lyrics/{lrc.name}", lrc)
+        v_url = fss.url(video_file)
+        l_url = fss.url(lyric_file)
+
+        lyrics = decode_lyrics(f"downloader{l_url}")
+        output_obj = add_lyrics_to_video(lyrics,f"downloader{v_url}")
+
+        save_video(output_obj,f"downloader/media/output/{video.name}")
+        try:
+            os.remove(f"downloader{v_url}")
+            os.remove(f"downloader{l_url}")
+        except Exception as e:
+            print(e)
+        url = fss.url(f"output/{video.name}")
+
+        return render(request,"output.html",{"url":url})
+
+    return render(request,"inputvideo.html")
+    
+
+def inputVideo(request):
+    return render(request,"inputvideo.html")
+
+def deletefiles(path):
+        try:
+            files = os.listdir(path)
+            for file in files:
+                os.remove(path+file)
+                print("deleted")
+        except Exception as e:
+            print(e)
