@@ -1,14 +1,9 @@
-import imp
-from importlib.resources import path
-
-from requests import delete
 from downloader.lyrics import *
 from django.shortcuts import render,redirect
 import pytube
 from django.http import FileResponse, HttpRequest, HttpResponse
 import pandas as pd
 import os
-from tubemate import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.staticfiles.storage import staticfiles_storage
 from tubemate import settings

@@ -1,7 +1,4 @@
-from cgi import print_environ
-from turtle import position, right, width
 import moviepy.editor as mpe
-import numpy as np
 import os
 
 import random
